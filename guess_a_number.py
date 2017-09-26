@@ -4,7 +4,6 @@ import math
 # config
 low = 1
 high = 100
-limit = round(math.log(high-low+1,2))
 
 # helper functions
 def show_start_screen():
@@ -70,6 +69,7 @@ def play_again():
 def play():
     guess = -1
     tries = 0
+    limit = round(math.log(high-low+1,2))
 
     rand = pick_number()
     
