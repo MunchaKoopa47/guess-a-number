@@ -12,8 +12,6 @@ def show_start_screen():
     print("▄█▄ ░░▀░░ ▄█▄ 　 ▒█░░▒█ ▀▀▀ 　 ░░▀░░ ▀░░▀ ▀▀▀ 　 ▀▀▀▀ ▀░░▀ ▀░░░▀ ▀▀▀ █ ")
     print("Now with 'A.I'!")
     print()
-    print("Think of a number" + low + " to " + high + ". I will try to guess.")
-    print()
 def show_credits():
     print()
     print("▒█▀▀█ █▀▀█ █▀▀ █▀▀█ ▀▀█▀▀ █▀▀ █▀▀▄ 　 █▀▀▄ █░░█")
@@ -28,32 +26,26 @@ def show_credits():
     print("AKA Tristan Bagwell.")
     
 def get_guess(current_low, current_high):
-    """
-    Return a truncated average of current low and high.
-    """
-    pass
+    guess = (current_low + current_high)//2
+    return guess
 
 def pick_number():
-    """
-    Ask the player to think of a number between low and high.
-    Then  wait until the player presses enter.
-    """
-    pass
-
+    print("Think of a number between " + str(low) + " and " + str(high) + ". Then press enter to continue.")
+    input()
+    
 def check_guess(guess):
-    """
-    Computer will ask if guess was too high, low, or correct.
-
-    Returns -1 if the guess was too low
-             0 if the guess was correct
-             1 if the guess was too high
-    """
+    print("Is it " + str(get_guess) + "? Higher, lower, or correct?")
+    check = input()
+    if check == higher
+        check = -1
+    elif check == correct
+        check = 0
+    else check == lower
+        check = 1
+    return check
 
 def show_result():
-    """
-    Says the result of the game. (The computer might always win.)
-    """
-    pass
+    print("I won! Get rekt nub!")
 
 def play_again():
     while True:
@@ -78,11 +70,9 @@ def play():
         check = check_guess(guess)
 
         if check == -1:
-            # adjust current_low
-            pass
+            current_low = guess
         elif check == 1:
-            # adjust current_high
-            pass
+            current_high = guess
 
     show_result(guess, rand)
 
